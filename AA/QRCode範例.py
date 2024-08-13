@@ -1,9 +1,3 @@
-# 16. 顯示 QR CODE 應用
-
-
-## 程式碼
-
-```
 from lib.uQR import QRCode
 
 wb.cls()
@@ -12,7 +6,6 @@ qr = QRCode()
 # qr.add_data('https://www.wifiboy.org')
 qr.add_data('https://ithelp.ithome.com.tw/users/20105707/ironman/7110')
 matrix = qr.get_matrix()
-print(len(matrix))
 
 QR_COLOR = wb.WHITE
 BG_COLOR = wb.BLACK  
@@ -25,16 +18,7 @@ wb.cls(BG_COLOR)
 for y in range(len(matrix)):
     for x in range(len(matrix[y])):
         color = QR_COLOR if matrix[y][x] else BG_COLOR
-        wb.pix(x * 2, y * 2, color) 
-    print(x * 1, y * 1 )
+        wb.pix(x * 3, y * 3, color)  # 放大每个像素
 
 wb.box(0, H - 20, W, H, BG_COLOR)
 wb.str("QR Code", 5, H - 15, 2, 2)
-```
-
-
-## 參考資料
-
-1. [QRCode](https://zh.wikipedia.org/zh-tw/QR%E7%A2%BC)
-2. [uQR](https://github.com/JASchilz/uQR)
-3. [產生 QRCode ( 個性化 QRCode )](https://steam.oxxostudio.tw/category/python/example/qrcode.html)
