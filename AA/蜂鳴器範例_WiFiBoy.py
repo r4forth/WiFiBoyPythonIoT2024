@@ -49,8 +49,11 @@ import toneng, time
 # 預設 C3 第三區
 ps1 = "CDEFGABC"
 ps2 = "GEEFDD2"
+ps3 = "ABCDEFG"
+ps = [ps1, ps2, ps3]
 
 # 先撥放第一段，再撥放第二段
-for i in range(2):
-    toneng._ps = ps1
+for i in range(len(ps)):
+    toneng._ps = ps[i]
     print(i)
+    sleep(2)
