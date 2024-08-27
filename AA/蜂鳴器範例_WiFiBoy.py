@@ -29,9 +29,9 @@ def play(freq, t):
     sleep(t)
     snd.duty(0)
 #     
-# # 01. 發出單音 Do C4
-# play(262, 1)
-# snd.deinit()
+# 01. 發出單音 Do C4
+play(262, 1)
+snd.deinit()
 # 
 # # 02. 播放音階 Do Mi So 三次
 # i = 0
@@ -45,15 +45,15 @@ def play(freq, t):
 
 
 # # 04. 使用內建音掉引擎，撥放音樂
-import toneng, time
-# 預設 C3 第三區
-ps1 = "CDEFGABC"
-ps2 = "GEEFDD2"
-ps3 = "ABCDEFG"
-ps = [ps1, ps2, ps3]
-
-# 先撥放第一段，再撥放第二段
-for i in range(len(ps)):
-    toneng._ps = ps[i]
-    print(i)
-    sleep(2)
+# import toneng, time
+# # 預設 C3 第三區
+# ps1 = "CDEFGABC"
+# ps2 = "GEEFDD2"
+# ps3 = "ABCDEFG"
+# ps = [ps1, ps2, ps3]
+# 
+# # 先撥放第一段，再撥放第二段
+# for i in range(len(ps)):
+#     toneng._ps = ps[i]
+#     print(i)
+#     sleep(2)
