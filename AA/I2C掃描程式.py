@@ -1,7 +1,8 @@
 # I2C 掃描程式
 import machine
-I2C_SDA_PIN = 23
-I2C_SCL_PIN = 22
+import wb_config
+I2C_SDA_PIN = wb_config.Pins.I2C_SDA
+I2C_SCL_PIN = wb_config.Pins.I2C_SCL
 i2c=machine.I2C(0,sda=machine.Pin(I2C_SDA_PIN), scl=machine.Pin(I2C_SCL_PIN), freq=400000)
 print('Scanning I2C bus.')
 devices = i2c.scan() # this returns a list of devices

@@ -1,5 +1,6 @@
 # 檢查記憶體容量
 import micropython
+import wb_config
 print(micropython.mem_info())
 
 # 檢查 Flash 容量

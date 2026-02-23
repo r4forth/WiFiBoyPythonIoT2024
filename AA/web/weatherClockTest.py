@@ -1,4 +1,5 @@
 import urequests
+import wb_config
 import wifi
 import ujson
 # 設定 WiFi 連線參數

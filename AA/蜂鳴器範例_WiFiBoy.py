@@ -1,11 +1,12 @@
 # 蜂鳴器範例.py
 
 from machine import Pin, PWM
+import wb_config
 from time import sleep
 
 # 蜂鳴器設定
-snd_PinA = Pin(17, 2).value(1)
-snd_PinB = Pin(25, 2)
+snd_PinA = Pin(wb_config.Pins.SOUND_PWM, 2).value(1)
+snd_PinB = Pin(wb_config.Pins.SOUND_DAC, 2)
 snd = PWM(snd_PinB)
 
 # tones = {

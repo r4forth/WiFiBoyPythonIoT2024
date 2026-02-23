@@ -2,7 +2,7 @@
 # 13.01 顯示指定數字，顯示 1688
 # from machine import Pin, SoftI2C
 # 
-# i2c = SoftI2C(scl = Pin(22), sda = Pin(23))
+# i2c = SoftI2C(scl=Pin(wb_config.Pins.I2C_SCL), sda=Pin(wb_config.Pins.I2C_SDA))
 # 
 # d = bytearray(1)
 # brightness = 1
@@ -17,7 +17,8 @@
 # ====================================================================================
 # 13.02 計數器程式，初始值先設為 0000
 from machine import Pin, SoftI2C
-i2c = SoftI2C(scl = Pin(22), sda = Pin(23))
+import wb_config
+i2c = SoftI2C(scl=Pin(wb_config.Pins.I2C_SCL), sda=Pin(wb_config.Pins.I2C_SDA))
 
 # 顯示數值函數
 def displayNum(num):
@@ -94,7 +95,7 @@ while True:
 # 
 # 
 # 
-# i2c = SoftI2C(scl = Pin(22), sda = Pin(23))
+# i2c = SoftI2C(scl=Pin(wb_config.Pins.I2C_SCL), sda=Pin(wb_config.Pins.I2C_SDA))
 # # 顯示數值函數
 # def displayNum(num, colon_on):
 #     d = bytearray(1)

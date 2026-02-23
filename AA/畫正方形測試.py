@@ -1,4 +1,5 @@
 from machine import Pin
+import wb_config
 import time
 from machine import PWM
 from time import sleep_ms

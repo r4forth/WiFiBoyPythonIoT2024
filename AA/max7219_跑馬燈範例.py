@@ -1,11 +1,12 @@
 # Max7219 範例_HelloWorld跑馬燈
 from machine import Pin, SPI
+import wb_config
 import lib.max7219
 from utime import sleep
 
-CLOCK_PIN = 18
-DATA_PIN = 23
-CS_PIN = 5
+CLOCK_PIN = wb_config.Pins.SPI_SCK
+DATA_PIN = wb_config.Pins.SPI_MOSI
+CS_PIN = wb_config.Pins.SPI_CS
 
 spi0 = SPI(2, baudrate=10000000, polarity=0, phase=0, sck=Pin(CLOCK_PIN), mosi=Pin(DATA_PIN))
 cs = Pin(CS_PIN, Pin.OUT)

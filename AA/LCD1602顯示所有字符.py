@@ -1,4 +1,5 @@
 import utime
+import wb_config
 from machine import I2C, Pin
 from lcd_api import LcdApi
 from pico_i2c_lcd import I2cLcd
@@ -12,7 +13,7 @@ def test_main():
     print("Running LCD1602 full character set")
     
     # 初始化 I2C
-    i2c = I2C(0, sda=Pin(23), scl=Pin(22), freq=400000)
+    i2c = I2C(0, sda=Pin(wb_config.Pins.I2C_SDA), scl=Pin(wb_config.Pins.I2C_SCL), freq=400000)
     lcd = I2cLcd(i2c, I2C_ADDR, I2C_NUM_ROWS, I2C_NUM_COLS)
     
     lcd.backlight_on()

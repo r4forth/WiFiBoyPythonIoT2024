@@ -1,4 +1,5 @@
 from time import sleep
+import wb_config
 import math
 
 angle = 0

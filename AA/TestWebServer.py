@@ -1,12 +1,13 @@
 from machine import Pin
+import wb_config
 import network
 import socket
 import time
 import wifi
 
 # 定義內建 LED 與 LCD 背光腳位
-LED = Pin(16, Pin.OUT)
-SCREEN = Pin(27, Pin.OUT)
+LED = Pin(wb_config.Pins.LED, Pin.OUT)
+SCREEN = Pin(wb_config.Pins.BACKLIGHT, Pin.OUT)
 
 # 設定初始值
 LED.value(1)  # OFF

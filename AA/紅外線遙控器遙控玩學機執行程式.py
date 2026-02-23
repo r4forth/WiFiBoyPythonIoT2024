@@ -1,4 +1,5 @@
 from ir_rx.nec import NEC_16
+import wb_config
 from machine import Pin
 import time
 
@@ -33,7 +34,7 @@ ir_key = {
 
 _data = None
 
-ir = NEC_16(Pin(2, Pin.IN), callBack)
+ir = NEC_16(Pin(wb_config.Pins.IR_RECEIVER, Pin.IN), callBack)
 
 while True:
     if _data == 'Power':

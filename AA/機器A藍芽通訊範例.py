@@ -1,4 +1,5 @@
 import ubluetooth
+import wb_config
 import time
 
 class ESP32_Bluetooth:

@@ -1,4 +1,5 @@
 import machine
+import wb_config
 from lib.toneng import toneng
 # 音階符號 : CDEFGAB   (Do Re Mi Fa So La Si)
 # o + 數字 : o4 代表選擇移動到鋼琴第四組八度音階，O3 就是第三組八度音階。

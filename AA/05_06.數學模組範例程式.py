@@ -1,5 +1,6 @@
 # 05_06. 隨機產生 0 ~ 100 的整數，計算全距、平均值、眾數、標準差與四分位數。
 import random
+import wb_config
 import math
 
 # 生成 0 到 100 之間的 100 個隨機整數

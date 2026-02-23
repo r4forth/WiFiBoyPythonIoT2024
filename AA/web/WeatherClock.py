@@ -1,5 +1,6 @@
  # CWA-D1DA3647-D49E-4EEF-B9ED-0814E6CE849F
 import network
+import wb_config
 import ntptime
 import wifi
 import urequests

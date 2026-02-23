@@ -8,6 +8,7 @@
 """
 
 import machine
+import wb_config
 import lib.syn6988
 
 poem = [
@@ -45,7 +46,7 @@ poem = [
 ser = machine.UART(
     2, baudrate=9600, bits=8, parity=None, stop=1, tx=5, rx=21
 )
-busy = machine.Pin(21, machine.Pin.IN, machine.Pin.PULL_UP)
+busy = machine.Pin(wb_config.Pins.SYN6988_BUSY, machine.Pin.IN, machine.Pin.PULL_UP)
 s = lib.syn6988.SYN6988(ser, busy)
 
 

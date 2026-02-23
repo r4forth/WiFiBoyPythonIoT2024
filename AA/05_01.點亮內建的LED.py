@@ -1,9 +1,10 @@
 # 05_01. 讓你的玩學機點亮機器內建的 LED，並間隔 1 秒持續閃爍。
 from machine import Pin
+import wb_config
 from time import sleep
 
 # 定義 LED 的輸出腳位，WiFiBoy Python IoT 是 Pin 16
-led = Pin(16, Pin.OUT)
+led = Pin(wb_config.Pins.LED, Pin.OUT)
 
 print('請把機器翻背面: 觀看內建 LED 的狀態: ')
 while True:

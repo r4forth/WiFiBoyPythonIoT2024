@@ -3,6 +3,7 @@
 # scruss, 2023-06
 
 import time
+import wb_config
 import machine
 import lib.syn6988
 
@@ -12,7 +13,7 @@ ser = machine.UART(
 )
 
 
-busyPin = machine.Pin(21, machine.Pin.IN, machine.Pin.PULL_UP)
+busyPin = machine.Pin(wb_config.Pins.SYN6988_BUSY, machine.Pin.IN, machine.Pin.PULL_UP)
 sp = lib.syn6988.SYN6988(ser, busyPin)
 
 

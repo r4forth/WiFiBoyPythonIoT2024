@@ -4,11 +4,12 @@
 # IO5   ---> TX
 # IO21  ---> RX
 from machine import UART, Pin
+import wb_config
 import time
 
 # 設定 UART 1，鮑率為 9600
-uart1 = UART(1, baudrate=9600, tx=Pin(5), rx=Pin(21))
-led = Pin(16, Pin.OUT)
+uart1 = UART(1, baudrate=9600, tx=Pin(wb_config.Pins.UART_TX), rx=Pin(wb_config.Pins.UART_RX))
+led = Pin(wb_config.Pins.LED, Pin.OUT)
 led.value(0)
 print('Machine A Ready!')
 

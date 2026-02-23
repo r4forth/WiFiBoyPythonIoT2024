@@ -7,6 +7,7 @@
 # get hid_services.py from https://github.com/Heerkog/MicroPythonBLEHID
 
 from hid_services import Keyboard
+import wb_config
 
 _key_list = {
     1:  0x11, # Button_A:     forward

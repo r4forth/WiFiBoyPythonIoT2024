@@ -1,10 +1,11 @@
 import time
+import wb_config
 from machine import SoftI2C, Pin
 from lib.esp32_i2c_1602lcd import I2cLcd
 
 
 DEFAULT_I2C_ADDR = 0x27
-i2c = SoftI2C(sda=Pin(23),scl=Pin(22),freq=100000)
+i2c = SoftI2C(sda=Pin(wb_config.Pins.I2C_SDA),scl=Pin(wb_config.Pins.I2C_SCL),freq=100000)
 lcd = I2cLcd(i2c, DEFAULT_I2C_ADDR, 2, 16)
 
 for i in range(1, 10):

@@ -1,11 +1,12 @@
 from machine import Pin
+import wb_config
 from machine import UART
 
 def main():
     # UART 1設成USB序列埠的預設腳
     com = UART(1, 9600, tx=1, rx=3)
     com.init(9600)
-    led = Pin(16, Pin.OUT, value=1)
+    led = Pin(wb_config.Pins.LED, Pin.OUT, value=1)
 
     while True:
         choice = com.readline()

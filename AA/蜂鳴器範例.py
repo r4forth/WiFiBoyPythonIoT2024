@@ -1,4 +1,5 @@
 from machine import Pin, PWM
+import wb_config
 from time import sleep_ms
 
 class BUZZER:
@@ -39,7 +40,7 @@ jingle = parse_melody(jingle_str)
 indiana_str = parse_melody(music_str)
 
 # 初始化蜂鸣器对象
-snd_PIN = Pin(17, 2).value(1)
+snd_PIN = Pin(wb_config.Pins.SOUND_PWM, 2).value(1)
 buzzer = BUZZER(25)
 
 # print("播放 超级马里奥")

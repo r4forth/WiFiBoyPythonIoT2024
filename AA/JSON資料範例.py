@@ -1,4 +1,5 @@
 import json
+import wb_config
 
 # 範例 JSON 字串
 json_string = '{"name": "Daniel", "age": 44, "isStudent": false, "courses": ["math", "science"]}'
