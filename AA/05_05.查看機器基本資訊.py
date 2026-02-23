@@ -1,5 +1,6 @@
 # 05_05. 查看機器基本資訊
 import machine
+import wb_config
 import gc
 import os
 

@@ -1,4 +1,5 @@
 import ure as re
+import wb_config
 
 # 定义正则表达式模式
 pattern = re.compile(r'\d+')

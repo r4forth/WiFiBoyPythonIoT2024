@@ -1,10 +1,11 @@
 from machine import Pin
+import wb_config
 from utime import sleep
 
 # 初始化紅外線感測器的引腳
-left_sensor = Pin(2, Pin.IN)    # 左側感測器連接到 GPIO 2
-center_sensor = Pin(5, Pin.IN)  # 中間感測器連接到 GPIO 5
-right_sensor = Pin(21, Pin.IN)   # 右側感測器連接到 GPIO 21
+left_sensor = Pin(wb_config.Pins.IR_RECEIVER, Pin.IN)    # 左側感測器連接到 GPIO 2
+center_sensor = Pin(wb_config.Pins.SPI_CS, Pin.IN)  # 中間感測器連接到 GPIO 5
+right_sensor = Pin(wb_config.Pins.SYN6988_BUSY, Pin.IN)   # 右側感測器連接到 GPIO 21
 
 def read_sensors():
     left = left_sensor.value()

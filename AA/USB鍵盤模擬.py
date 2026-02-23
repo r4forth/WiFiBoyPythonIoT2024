@@ -1,4 +1,5 @@
 import machine
+import wb_config
 import time
 from machine import Pin
 import uhid

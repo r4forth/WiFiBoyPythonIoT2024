@@ -1,5 +1,6 @@
 # 13.03 網路時鐘
 from machine import Pin, SoftI2C
+import wb_config
 import network, ntptime, time
 
 # WiFi 設定
@@ -29,7 +30,7 @@ def get_network_time():
 
 
 
-i2c = SoftI2C(scl = Pin(22), sda = Pin(23))
+i2c = SoftI2C(scl=Pin(wb_config.Pins.I2C_SCL), sda=Pin(wb_config.Pins.I2C_SDA))
 # 顯示數值函數
 def displayNum(num, colon_on):
     d = bytearray(1)

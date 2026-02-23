@@ -1,5 +1,6 @@
 # 簡單WebServer 程式
 import socket
+import wb_config
 import wifi
 
 # 設定 WiFi 連線參數

@@ -1,4 +1,5 @@
 from ir_rx.nec import NEC_16
+import wb_config
 from machine import Timer
 from machine import Pin
 
@@ -10,7 +11,7 @@ def callBack(data, addr, ctrl):
         print("data: {:02x} addr: {:04x}".format(data, addr))
         print(_data)
 
-ir = NEC_16(Pin(2, Pin.IN), callBack)
+ir = NEC_16(Pin(wb_config.Pins.IR_RECEIVER, Pin.IN), callBack)
 
 ir_key = {
     0x12 : 'Power',

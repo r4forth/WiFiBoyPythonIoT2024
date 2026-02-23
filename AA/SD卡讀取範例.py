@@ -7,14 +7,15 @@
 
 # 初始化 SPI 接口
 from machine import Pin, SoftSPI
+import wb_config
 import os
 from lib.sdcard import sdcard
 
 # import os
 # from machine import Pin, SoftSPI
 # from sdcard import SDCard
-spisd = SoftSPI(1, miso=Pin(19), mosi=Pin(23), sck=Pin(18))
-sd = sdcard(spisd, Pin(5))
+spisd = SoftSPI(1, miso=Pin(wb_config.Pins.SPI_MISO), mosi=Pin(wb_config.Pins.SPI_MOSI), sck=Pin(wb_config.Pins.SPI_SCK))
+sd = sdcard(spisd, Pin(wb_config.Pins.SPI_CS))
 
 print('Root directory:{}'.format(os.listdir()))
 vfs = os.VfsFat(sd)

@@ -1,4 +1,5 @@
 import os
+import wb_config
 from machine import Pin, SoftSPI
 from sdcard import SDCard
 # MISO GPIO19 PIN 7
@@ -6,8 +7,8 @@ from sdcard import SDCard
 # CS   GPIO5  PIN5           ChipSelect
 # SCK  GPIO18 PIN 8 CLOCK    VSPI CLK
 # 預設設定
-spisd = SoftSPI(2, miso=Pin(19), mosi=Pin(23), sck=Pin(18))
-sd = SDCard(spisd, Pin(5))
+spisd = SoftSPI(2, miso=Pin(wb_config.Pins.SPI_MISO), mosi=Pin(wb_config.Pins.SPI_MOSI), sck=Pin(wb_config.Pins.SPI_SCK))
+sd = SDCard(spisd, Pin(wb_config.Pins.SPI_CS))
 # ===========================================================
 ## 01. 印出根目錄檔案清單
 # print('/lib/: {}'.format(os.listdir('lib')))

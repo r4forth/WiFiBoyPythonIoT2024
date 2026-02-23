@@ -6,6 +6,7 @@
 """
 
 import machine
+import wb_config
 import time
 
 

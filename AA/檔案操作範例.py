@@ -1,4 +1,5 @@
 import os
+import wb_config
 
 file_name = 'example.txt'
 

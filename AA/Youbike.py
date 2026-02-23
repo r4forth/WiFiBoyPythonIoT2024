@@ -1,4 +1,5 @@
 import network
+import wb_config
 import time
 
 # Wi-Fi 設定

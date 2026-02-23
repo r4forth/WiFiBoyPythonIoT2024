@@ -1,4 +1,5 @@
 from lib.uQR import QRCode
+import wb_config
 
 wb.cls()
 

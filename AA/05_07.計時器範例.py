@@ -1,9 +1,10 @@
 # 05_07. 計時器範例
 from machine import Timer, Pin
+import wb_config
 from time import localtime
 
 # 設置內建LED
-led = Pin(16, Pin.OUT)
+led = Pin(wb_config.Pins.LED, Pin.OUT)
 
 # 初始化 LED 狀態
 led_state = False

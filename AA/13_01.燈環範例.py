@@ -8,7 +8,7 @@
 # LED_GREEN = (0, 64, 0)
 # LED_BLUE = (0, 0, 64)
 # LED_YELLOW = (64, 64, 0)
-# pin = Pin(2, Pin.OUT)    
+# pin = Pin(wb_config.Pins.IR_RECEIVER, Pin.OUT)
 # np = NeoPixel(pin, 12)
 # # 亮紅綠燈
 # np[11] =  LED_RED
@@ -21,7 +21,7 @@
 # from machine import Pin
 # from neopixel import NeoPixel
 # 
-# pin = Pin(2, Pin.OUT)    
+# pin = Pin(wb_config.Pins.IR_RECEIVER, Pin.OUT)
 # np = NeoPixel(pin, 12)   
 # for i in range(0, 12):   
 #     np[i] = (0, 64, 0) 
@@ -35,7 +35,7 @@
 # import time
 # from machine import Pin
 # from neopixel import NeoPixel
-# pin = Pin(2, Pin.OUT)    
+# pin = Pin(wb_config.Pins.IR_RECEIVER, Pin.OUT)
 # np = NeoPixel(pin, 12)
 # # 主程式
 # def set_light(red, yellow, green):
@@ -74,10 +74,11 @@
 # 13.04 電子色子模擬程式
 # 彩燈骰子
 import time
+import wb_config
 import neopixel
 # 蜂鳴器啟動
-machine.Pin(17, 2).value(1)
-snd = machine.PWM(machine.Pin(25,2))
+machine.Pin(wb_config.Pins.SOUND_PWM, 2).value(1)
+snd = machine.PWM(machine.Pin(wb_config.Pins.SOUND_DAC, 2))
 snd.duty(0)
 
 def play(f, t):
@@ -86,7 +87,7 @@ def play(f, t):
 
 # 燈環控制
 numbers = 12
-np = neopixel.NeoPixel(machine.Pin(2), numbers, bpp = 3)
+np = neopixel.NeoPixel(machine.Pin(wb_config.Pins.NEOPIXEL), numbers, bpp = 3)
 print('請按任一鍵開始丟骰子!')
 wb.cls()
 while True:

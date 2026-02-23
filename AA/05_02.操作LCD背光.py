@@ -1,9 +1,10 @@
 # 05_02. 操作 LCD 背光，並將 LCD 畫面設定為藍色。
 from machine import Pin
+import wb_config
 from time import sleep
 
 # 定義 LED 的輸出腳位，WiFiBoy Python IoT Pin 27 控制玩學機的背光 
-led = Pin(27, Pin.OUT)
+led = Pin(wb_config.Pins.BACKLIGHT, Pin.OUT)
 
 print('請觀察: 觀看正面 LCD 面板的狀態: ')
 wb.cls(wb.BLUE)

@@ -3,8 +3,9 @@
 # (C)2024 WiFiBoy Computing Laboratory Taiwan
 
 import machine, time
+import wb_config
 
-i2c=machine.SoftI2C(scl=machine.Pin(22),sda=machine.Pin(23)) 
+i2c=machine.SoftI2C(scl=machine.Pin(wb_config.Pins.I2C_SCL),sda=machine.Pin(wb_config.Pins.I2C_SDA))
 i2c.writeto_mem(0x19,0x20,b'\x77')
 i2c.writeto_mem(0x19,0x23,b'\x88')
 

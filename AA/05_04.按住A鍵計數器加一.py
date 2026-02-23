@@ -1,5 +1,6 @@
 # 05_04. 當按下 A 鍵，畫面上的計數器加一
 from machine import Pin
+import wb_config
 from time import sleep
 Counter = 0
 Limit = 120

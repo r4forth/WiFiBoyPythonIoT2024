@@ -1,4 +1,5 @@
 from micropython import const
+import wb_config
 import asyncio
 import aioble
 import bluetooth
@@ -7,7 +8,7 @@ from machine import Pin
 from random import randint
 
 # 啟動玩學機內建的 LED
-led = Pin(16, Pin.OUT)
+led = Pin(wb_config.Pins.LED, Pin.OUT)
 led.value(0)
 
 # 設定隨機數值

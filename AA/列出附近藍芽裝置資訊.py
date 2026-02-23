@@ -1,4 +1,5 @@
 import ubluetooth
+import wb_config
 from micropython import const
 import time
 

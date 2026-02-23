@@ -1,4 +1,5 @@
 import network
+import wb_config
 
 def connect(ssid, password):
     station = network.WLAN(network.STA_IF)

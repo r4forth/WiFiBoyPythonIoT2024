@@ -1,5 +1,6 @@
 # 07_01.binasciiTest.py
 import binascii
+import wb_config
 
 # 範例二進制數據
 binary_data = b'Hello, WiFiBoy!'

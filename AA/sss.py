@@ -1,7 +1,8 @@
 import machine, os, sdcard
+import wb_config
 
 # Assign chip select (CS) pin (and start it high)
-cs = machine.Pin(5, machine.Pin.OUT)
+cs = machine.Pin(wb_config.Pins.SPI_CS, machine.Pin.OUT)
 # Intialize SPI peripheral (start with 1 MHz)
 spi = machine.SPI(2,
                   baudrate=1000000,
@@ -9,9 +10,9 @@ spi = machine.SPI(2,
                   phase=0,
                   bits=8,
                   firstbit=machine.SPI.MSB,
-                  sck=machine.Pin(18),
-                  mosi=machine.Pin(23),
-                  miso=machine.Pin(19))
+                  sck=machine.Pin(wb_config.Pins.SPI_SCK),
+                  mosi=machine.Pin(wb_config.Pins.I2C_SDA),
+                  miso=machine.Pin(wb_config.Pins.SPI_MISO))
 # Initialize SD card
 sd = sdcard.SDCard(spi, cs)
 
